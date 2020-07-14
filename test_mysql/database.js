@@ -8,7 +8,7 @@ const pool = createPool({
 	connectionLimit: 10
 })
 
-pool.query(`select * from identity`, (err, result, fields) => {
+pool.query(`select * from identity where roll  = ?`, [3], (err, result, fields) => {
 	if(err){ 
 		return console.log(err)
 	}
